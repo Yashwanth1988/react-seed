@@ -10,7 +10,6 @@ module.exports = {
         publicPath: '/dist/',
         filename : 'bundle.js'
     },
-
     devtool: 'eval-source-map',
 
     module: {
@@ -20,6 +19,11 @@ module.exports = {
             exclude: /(node_modules)/,
             loader: "babel-loader",
             options: { presets: ["@babel/env", "@babel/preset-react"] }
+          },
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /(node_modules)/,
+            loader:  "eslint-loader"
           },
           {
             test: /\.css$/,
