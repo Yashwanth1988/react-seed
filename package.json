@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --watch --mode development",
-    "start": "nodemon ./server/server.js"
+    "start": "nodemon ./server/server.js",
+    "lint": "eslint ./src/*.js",
+    "config-lint": "eslint --init",
+    "build": "npm run lint && webpack --watch --mode development"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +16,10 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "eslint": "^5.13.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-jsx": "0.0.2",
+    "eslint-plugin-react": "^7.12.4",
     "express": "^4.16.4",
     "nodemon": "^1.18.9",
     "webpack": "^4.29.3",
