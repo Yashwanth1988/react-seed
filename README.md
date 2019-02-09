@@ -1,5 +1,5 @@
 # react-seed
-this is a basic setup required for react app
+this is a basic setup required for react app, with ESLint validations
 
 To run it.
 -------------
