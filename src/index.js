@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
-// React DOM
+/* React DOM */
 
 
 ReactDOM.render(
