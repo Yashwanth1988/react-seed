@@ -1,20 +1,31 @@
 import React from 'react';
 import { Button, InputText } from 'react-lib'
+import { Card } from './Card'
+import { EstablishmentContext } from './contexts'
 
 export class App extends React.Component {
 
 	constructor(props){
 		super(props)
 		this.state = {
-			name: 'test'
+			name: 'test',
+            company: 'Microsoft'
 		}
+        this.handleCompanyChange = this.handleCompanyChange.bind(this)
 	}
+
+    handleCompanyChange(company){
+        this.setState({
+            company
+        })
+    }
 	
     
     render(){
         return (
             <div>
                 <h1>Hi {this.props.message}, to the React world.</h1>
+
                 <InputText id="what_your_name"
                 	className="myName"
                 	value={this.state.name}
@@ -26,6 +37,7 @@ export class App extends React.Component {
                 		}
                 	}
                  />
+
                 <Button 
                 	id="test_id"
                 	className="myButton"
@@ -33,6 +45,11 @@ export class App extends React.Component {
                 	onClick={function(){
                 		alert('Here is the click event..!')
                 	}} />
+
+                <h2>Company registered: {this.state.company}</h2>
+                <EstablishmentContext.Provider value={this.state.company}>
+                    <Card onUpdateCompany={this.handleCompanyChange} />
+                </EstablishmentContext.Provider>
             </div>
         )
     }

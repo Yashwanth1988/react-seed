@@ -1,0 +1,42 @@
+So what is the difference? useCallback returns its function uncalled so you can call it later, while useMemo calls its function and returns the result.
+
+
+function foo() {
+  return 'bar';
+}
+
+const memoizedCallback = useCallback(foo, []);
+const memoizedResult = useMemo(foo, []);
+
+memoizedCallback;
+// ƒ foo() {
+//   return 'bar';
+// }
+memoizedResult; // 'bar'
+memoizedCallback(); // 'bar'
+memoizedResult(); //  TypeError
+
+reference : https://medium.com/@jan.hesters/usecallback-vs-usememo-c23ad1dc60
+
+CURD operations
+	CREATE - post
+		endpoint : api/user
+		request : {
+			id: 1,
+			username: 'John Bill'
+		}
+
+	UPDATE - put
+		endpoint : api/user/1
+		request: {
+			username: 'Bill Gates'
+		}
+
+	READ - get
+	    endpoint : api/user/1 or api/users
+	    request: {
+	    	id: 1
+	    }
+
+	 DELETE - delete
+		endpoint : api/user/1
