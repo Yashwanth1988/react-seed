@@ -16,18 +16,20 @@ export function Card({ onUpdateCompany }){
 	// }
 
 	const fetchCallback = React.useCallback(() => {
-		fetchUserApi(company)
+		if(company){
+		  fetchUserApi(company)
+		}
 	}, [company])
 
 	function fetchUserApi(id){
 		setUser('Please wait..! Fetching information.')
-		fetch(`https://jsonplaceholder.typicode.com/todos/${id}`).then(response => {
+		fetch(`/api/user/${id}`).then(response => {
 			if(response.ok){
 				const res = response.json()
 				return res
 			}
 		}).then(data => {
-			setUser(data.title)
+			setUser(data.username)
 		})
 	} 
 
