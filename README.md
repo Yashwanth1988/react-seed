@@ -9,16 +9,6 @@ And then start you app by npm run start - (will trigger the server at port 3000,
 
 # Graph QL Notes and Links
 
-apollo , graph QL, mutations, - AWS
-FC code base - take a look, for expand of widgets,
- modify layout, settings pop to change the widget data points
- update team calender with leaves
- out of office email - 
- cancel or reject meeting those days
- graphql - querying and mutations
- layout builder - in react
-
-
 Schema:
 The GraphQL schema outlines the categories or type that the data can be split into. It also defines what information will be contained in each type. Think of this as a blueprint to display the architecture of your database.
 
