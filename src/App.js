@@ -1,4 +1,5 @@
 import React from 'react';
+import { EmployeeDashboard } from './components/EmployeeDashboard';
 
 export class App extends React.Component {
 
@@ -7,7 +8,7 @@ export class App extends React.Component {
        
         return (
             <div>
-                <h1>Hi {this.props.message}, to the React world.</h1>
+                <EmployeeDashboard />
             </div>
         )
     }
